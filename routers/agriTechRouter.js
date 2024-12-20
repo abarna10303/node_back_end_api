@@ -5,6 +5,7 @@ import {
   otpLoginValidationController,
   postUserDataController,
   postJobDetailsController,
+  getJobDetailsController,
 } from "../controllers/agriTechController.js";
 
 const router = Router();
