@@ -140,7 +140,7 @@ export const getJobDetailsService = async (createdBy,mobileNo) => {
       createdByMobile: mobileNo,
       status: "Active",
     };
-    const result = await collection.find(jsonData).toArray();
+    const result = await collection.find(jsonData,{_id:0}).toArray();
 
     return result;
   } catch (error) {
