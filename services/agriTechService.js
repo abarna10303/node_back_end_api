@@ -149,3 +149,4 @@ export const getJobDetailsService = async (data) => {
   } finally {
     await client.close();
   }
+};
