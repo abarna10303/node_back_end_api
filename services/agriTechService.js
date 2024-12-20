@@ -150,3 +150,24 @@ export const getJobDetailsService = async (createdBy,mobileNo) => {
     await client.close();
   }
 };
+
+export const avaialbleWorkersService = async (pincode) => {
+  try {
+    await client.connect();
+
+    const database = client.db("agri_tech");
+    const collection = database.collection("users");
+
+    const jsonData = {
+      pincode: pincode,
+    };
+    const result = await collection.find(jsonData, { _id: 0 }).toArray();
+
+    return result;
+  } catch (error) {
+    console.error("Error occurred while inserting into MongoDB:", error);
+    throw error;
+  } finally {
+    await client.close();
+  }
+};
