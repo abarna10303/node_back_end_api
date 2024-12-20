@@ -160,6 +160,7 @@ export const avaialbleWorkersService = async (pincode) => {
 
     const jsonData = {
       pincode: pincode,
+      type:"worker"
     };
     const result = await collection.find(jsonData, { _id: 0 }).toArray();
 
