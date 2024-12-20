@@ -1,8 +1,8 @@
 import { getAgriTechService } from "../services/agriTechService.js";
 
-export const agriTechController = (_req, res) => {
+export const agriTechController = async (_req, res) => {
   try {
-    const data = getAgriTechService();
+    const data = await getAgriTechService();
     res.json({
       flag: "success",
       data,

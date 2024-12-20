@@ -3,7 +3,7 @@ import { agriTechController } from "../controllers/agriTechController.js";
 
 const router = Router();
 
-router.get("/", agriTechController);
+router.get("/getData", agriTechController);
 
 // router.get("/authenticate", azureAuthorizeController);
 
