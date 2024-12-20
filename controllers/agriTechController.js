@@ -4,6 +4,7 @@ import {
   otpLoginValidationService,
   postUserDataService,
   postJobDetailsService,
+  getJobDetailsService
 } from "../services/agriTechService.js";
 
 export const agriTechController = async (req, res) => {
@@ -71,7 +72,8 @@ export const postJobDetailsController = async (req, res) => {
 
 export const getJobDetailsController = async (req, res) => {
   try {
-    const data = await getJobDetailsService(req.body.data);
+    const {createdBy,mobileNo} = req.query
+    const data = await getJobDetailsService(createdBy,mobileNo);
     res.json({
       flag: "success",
       data,
