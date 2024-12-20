@@ -68,3 +68,15 @@ export const postJobDetailsController = async (req, res) => {
     throw new Error(error);
   }
 };
+
+export const getJobDetailsController = async (req, res) => {
+  try {
+    const data = await getJobDetailsService(req.body.data);
+    res.json({
+      flag: "success",
+      data,
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
