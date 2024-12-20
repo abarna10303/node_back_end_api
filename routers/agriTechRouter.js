@@ -16,7 +16,7 @@ router.post("/updateData", postUserDataController);
 router.put("/otp-login", otpLoginController);
 router.put("/otp-login-validation", otpLoginValidationController);
 router.post("/create-job", postJobDetailsController);
-router.post("/get-job", getJobDetailsController);
+router.post("/get-active-job", getJobDetailsController);
 
 // router.get("/authenticate", azureAuthorizeController);
 
