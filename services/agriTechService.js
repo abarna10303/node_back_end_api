@@ -127,3 +127,25 @@ export const postJobDetailsService = async (data) => {
     await client.close();
   }
 };
+
+export const getJobDetailsService = async (data) => {
+  try {
+    await client.connect();
+
+    const database = client.db("agri_tech");
+    const collection = database.collection("Job_list");
+
+    const jsonData = {
+      createdBy: data.createdBy,
+      createdByMobile: data.createdByMobile,
+      status: "Active",
+    };
+    const result = await collection.find(jsonData).toArray();
+
+    return result;
+  } catch (error) {
+    console.error("Error occurred while inserting into MongoDB:", error);
+    throw error;
+  } finally {
+    await client.close();
+  }
