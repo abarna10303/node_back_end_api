@@ -128,7 +128,7 @@ export const postJobDetailsService = async (data) => {
   }
 };
 
-export const getJobDetailsService = async (data) => {
+export const getJobDetailsService = async (createdBy,mobileNo) => {
   try {
     await client.connect();
 
@@ -136,8 +136,8 @@ export const getJobDetailsService = async (data) => {
     const collection = database.collection("Job_list");
 
     const jsonData = {
-      createdBy: data.createdBy,
-      createdByMobile: data.createdByMobile,
+      createdBy: createdBy,
+      createdByMobile: mobileNo,
       status: "Active",
     };
     const result = await collection.find(jsonData).toArray();
