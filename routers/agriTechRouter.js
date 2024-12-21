@@ -6,7 +6,8 @@ import {
   postUserDataController,
   postJobDetailsController,
   getJobDetailsController,
-  avaialbleWorkersController
+  avaialbleWorkersController,
+  getAvailableContractorsController,
 } from "../controllers/agriTechController.js";
 
 const router = Router();
@@ -19,6 +20,7 @@ router.put("/otp-login-validation", otpLoginValidationController);
 router.post("/create-job", postJobDetailsController);
 router.get("/get-active-job", getJobDetailsController);
 router.get("/get-available-workers", avaialbleWorkersController);
+router.get("/get-available-contractors", getAvailableContractorsController);
 
 // router.get("/authenticate", azureAuthorizeController);
 
