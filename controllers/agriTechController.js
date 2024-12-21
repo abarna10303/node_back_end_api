@@ -5,7 +5,8 @@ import {
   postUserDataService,
   postJobDetailsService,
   getJobDetailsService,
-  avaialbleWorkersService
+  avaialbleWorkersService,
+  getAvailableContractorService
 } from "../services/agriTechService.js";
 
 export const agriTechController = async (req, res) => {
@@ -88,6 +89,19 @@ export const avaialbleWorkersController = async (req, res) => {
   try {
     const { pincode } = req.query;
     const data = await avaialbleWorkersService(pincode);
+    res.json({
+      flag: "success",
+      data,
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const getAvailableContractorsController = async (req, res) => {
+  try {
+    const { pincode } = req.query;
+    const data = await getAvailableContractorService(pincode);
     res.json({
       flag: "success",
       data,
