@@ -87,8 +87,8 @@ export const getJobDetailsController = async (req, res) => {
 
 export const avaialbleWorkersController = async (req, res) => {
   try {
-    const { pincode } = req.query;
-    const data = await avaialbleWorkersService(pincode);
+    const { pincode,worker } = req.query;
+    const data = await avaialbleWorkersService(pincode,worker);
     res.json({
       flag: "success",
       data,
