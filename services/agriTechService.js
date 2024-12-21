@@ -151,7 +151,7 @@ export const getJobDetailsService = async (createdBy,mobileNo) => {
   }
 };
 
-export const avaialbleWorkersService = async (pincode) => {
+export const avaialbleWorkersService = async (pincode,worker) => {
   try {
     await client.connect();
 
@@ -160,7 +160,7 @@ export const avaialbleWorkersService = async (pincode) => {
 
     const jsonData = {
       pincode: pincode,
-      type:"worker"
+      type:worker
     };
     const result = await collection.find(jsonData, { _id: 0 }).toArray();
 
